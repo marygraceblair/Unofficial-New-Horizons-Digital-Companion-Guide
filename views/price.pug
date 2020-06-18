@@ -4,16 +4,10 @@ block content
     .main.content
         .row
             .col-md-6.col-md-offset-3
-                h1.display-4.m-b-2 Find Prices For Bugs And Fishes in New Horizon
+                h1.display-4.m-b-2 Find Prices For Bugs And Fishes
                 // register form
                 form(method='POST' action='/price')
-                    div.form-group
-                        label(for='critter_name') Name:
-                        input#name.form-control(type='text', placeholder='Critter Name' name='critter_name')
-                    div.form-group
-                        label(for='fish') Fish:
-                        input(type='radio', name='fish')
-                        label(for='bug') Bug:
-                        input(type='radio', name='bug')
-                    button.btn.btn-primary(type='submit') Look Up
-
+                        +input("text","txtName","Name","Name")
+                        +radio-inline("Bug")
+                        +radio-inline("Fish")
+                        +submit("Look Up")
