@@ -22,4 +22,10 @@ router.post('/price', function(req, res, next) {
         }
     });
 });
+
+router.get('/a', function(req, res, next) {
+    var image = "https://vignette.wikia.nocookie.net/animalcrossing/images/4/44/NH-Icon-Nook_Phone-Critterpedia.png/revision/latest/scale-to-width-down/340?cb=20200430155808";
+    res.render('price', {imageURL: image, critterName:'', critterPrice: 0});
+    });
+
 module.exports = router;

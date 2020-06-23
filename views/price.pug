@@ -1,28 +1,25 @@
 extends layout
-
 block content
-    .main.content
-        .row
-            .col-md-6.col-md-offset-3
-                h1.display-4.m-b-2 Find Prices For Bugs And Fishes
+    .main.content.h-100
+        .row.h-100.justify-content-center.align-items-center
+            .col-md-6.text-center
+                h1 Bug and Fish Price Guide 
                 // register form
                 form(method='POST' action='/price')
                     .form-group
-                        label(for='name') Name
-                        input#critterName.form-control(type='text', name='critterName')
-                        .br
-                    .form-group
-                        .form-check.form-check-inline
-                            input#fish.form-check-input(type='radio', name='critterType', value='fish')
-                            label.form-check-label(for='fish') Fish
-                        .form-check.form-check-inline
-                            input#bug.form-check-input(type='radio', name='critterType', value='bug')
-                            label.form-check-label(for='bug') Bug
-                        .br
-                        button.btn.btn-primary(type='submit') Look Up
+                        input#critterName.form-control(type='text', name='critterName', placeholder='Critter Name')
+                    .col-md-6
+                        .form-group-inline.d-flex.flex-row.justify-content-between
+                            .form-group
+                                .form-check.form-check-inline
+                                    input#fish.form-check-input(type='radio', name='critterType', value='fish')
+                                    label.form-check-label(for='fish') Fish
+                                .form-check.form-check-inline
+                                    input#bug.form-check-input(type='radio', name='critterType', value='bug')
+                                    label.form-check-label(for='bug') Bug
+                            .div1
+                                button.btn.btn-primary(type='submit') Look Up
                 img.img-fluid(src=imageURL, alt=critterName)
                 if critterPrice > 0 
-                    h1 Sells For:
-                    h1=critterPrice
-                    h1 bells
+                    h3 Sells For: #{critterPrice} bells
 
