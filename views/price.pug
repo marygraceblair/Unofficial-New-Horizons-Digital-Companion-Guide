@@ -8,17 +8,17 @@ block content
                 form(method='POST' action='/price')
                     .form-group
                         input#critterName.form-control(type='text', name='critterName', placeholder='Critter Name')
-                    .col-md-6
-                        .form-group-inline.d-flex.flex-row.justify-content-between
-                            .form-group
-                                .form-check.form-check-inline
-                                    input#fish.form-check-input(type='radio', name='critterType', value='fish')
-                                    label.form-check-label(for='fish') Fish
-                                .form-check.form-check-inline
-                                    input#bug.form-check-input(type='radio', name='critterType', value='bug')
-                                    label.form-check-label(for='bug') Bug
-                            .div1
-                                button.btn.btn-primary(type='submit') Look Up
+                    .br
+                    .form-group-inline.d-flex.flex-row.justify-content-between
+                        .form-group
+                            .form-check.form-check-inline
+                                input#fish.form-check-input(type='radio', name='critterType', value='fish')
+                                label.form-check-label(for='fish') Fish
+                            .form-check.form-check-inline
+                                input#bug.form-check-input(type='radio', name='critterType', value='bug')
+                                label.form-check-label(for='bug') Bug
+                        .div1
+                            button.btn.btn-primary(type='submit') Look Up
                 img.img-fluid(src=imageURL, alt=critterName)
                 if critterPrice > 0 
                     h3 Sells For: #{critterPrice} bells
